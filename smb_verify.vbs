@@ -2,6 +2,8 @@ Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\roo
 
 letter = "v:"
 
+MsgBox "To jest test"
+
 Set colDisks = objWMIService.ExecQuery( "Select * from Win32_LogicalDisk Where Name = """ & letter & """" )
 For Each objDisk In colDisks
 	drivetype = objDisk.DriveType
